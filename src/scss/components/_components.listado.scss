@@ -1,0 +1,125 @@
+// listado de datos
+.c-listado-vacio {
+  img {
+    width: 35%;
+    margin: 0 auto;
+  }
+}
+.c-listado {
+  height: 100%;
+  &__titulo {
+    max-height: rem-calc(44px);
+    min-height: rem-calc(44px);
+    height: rem-calc(44px);
+  }
+  &__encabezados {
+    tr,
+    th {
+      max-height: rem-calc(44px);
+      min-height: rem-calc(44px);
+      height: rem-calc(44px);
+      background-color: #f0f5f9;
+      font-size: 1rem;
+      line-height: 1;
+    }
+    th {
+    }
+  }
+  &__datos {
+    td {
+      border-bottom: 1px solid #f0f5f9;
+      text-align: center;
+      max-height: rem-calc(44px);
+      min-height: rem-calc(44px);
+      height: rem-calc(44px);
+      [class*='fa-'] {
+        margin-right: 1rem;
+        font-size: rem-calc(9px);
+        line-height: rem-calc(12px);
+      }
+    }
+  }
+  &__item {
+    @extend .c-checklist__item;
+    [class*='fa-'] {
+      margin-right: 1rem;
+    }
+    &--separador {
+      border-bottom: 1px solid $color-separador;
+    }
+  }
+
+  &__paginacion {
+    max-height: rem-calc(44px);
+    min-height: rem-calc(44px);
+    height: rem-calc(44px);
+    li {
+      &:first-child a,
+      &:last-child a {
+        background-color: #f0f5f9;
+      }
+    }
+    a {
+      margin: 0 5px;
+      color: #575962;
+      text-decoration: none;
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      @extend .u-tiny-text;
+      &.activo {
+        background-color: $color-primario;
+        color: $color-blanco;
+      }
+    }
+  }
+}
+
+// checklist
+.c-checklist {
+  &__item {
+    min-height: 38px;
+    position: relative;
+    &--separador {
+      border-bottom: 1px solid $color-separador;
+    }
+    &--activo {
+      border: 1px solid $color-primario;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 20%;
+        right: -10px;
+        border-left: 10px solid $color-primario;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+    }
+  }
+  &__check {
+    position: relative;
+    input {
+      display: none;
+    }
+    input:checked + label {
+      // border: 1px solid transparent;
+      transform: rotate(40deg) translate(-2px, -2px);
+      border-top: none;
+      border-left: none;
+      width: 10px;
+      height: 20px;
+      border-color: $color-ok;
+    }
+    label {
+      cursor: pointer;
+      display: block;
+      width: 15px;
+      height: 15px;
+      border: 1px solid $color-borde-campo;
+      margin: auto;
+      transition-property: transform, border, width, height;
+      transition-duration: 0.2s, 0.2s, 0.2s, 0.2s;
+    }
+  }
+}

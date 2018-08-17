@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KSS Style Guide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="generator" content="kss-node">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,300">
+    <link rel="stylesheet" href="kss-assets/vendor/prism.css">
+    <link rel="stylesheet" href="kss-assets/css/kss.css">
+    <link rel="stylesheet" href="../dist/css/main.css">
+
+  </head>
+
+  <body class="kss-body">
+
+    <!-- header. -->
+    <header class="kss-header">
+      <section class="kss-header__inner">
+        <a class="kss-header__hamburger-trigger">
+          <div class="kss-header__hamburger"></div>
+        </a>
+        <h1 class="kss-header__title kss-title">KSS Style Guide</h1>
+      </section>
+    </header>
+    <!-- /header. -->
+
+
+    <!-- navigation. -->
+    <section class="kss-navigation">
+      <h1 class="kss-navigation__title kss-title">KSS Style Guide</h1>
+      <ul class="kss-nav">
+        <li class="kss-nav__item">
+          <a href="index.html">
+            <span class="kss-nav__ref">0</span>
+            <span class="kss-nav__name">Introduction</span>
+          </a>
+        </li>
+          <li class="kss-nav__item">
+            <a class="kss-state-active" href="section-1.html">
+              <span class="kss-nav__ref">1</span>
+              <span class="kss-nav__name">1</span>
+            </a>
+                <ul class="kss-nav__subnav">
+                    <li class="kss-nav__item ">
+                      <a href="section-1.html#kssref-1-0-style-guide-components">
+                        <span class="kss-nav__ref">1.1</span>
+                        <span class="kss-nav__name">1.0 Style guide: components</span>
+                      </a>
+                    </li>
+                    <li class="kss-nav__item kss-nav__item--grandchild">
+                      <a href="section-1.html#kssref-1-0-style-guide-components-boton">
+                        <span class="kss-nav__ref">1.1.1</span>
+                        <span class="kss-nav__name">Boton</span>
+                      </a>
+                    </li>
+                    <li class="kss-nav__item kss-nav__item--grandchild">
+                      <a href="section-1.html#kssref-1-0-style-guide-components-button">
+                        <span class="kss-nav__ref">1.1.2</span>
+                        <span class="kss-nav__name">1.0 Style guide: components.button</span>
+                      </a>
+                    </li>
+                    <li class="kss-nav__item kss-nav__item--grandchild">
+                      <a href="section-1.html#kssref-1-0-style-guide-components-opciones">
+                        <span class="kss-nav__ref">1.1.3</span>
+                        <span class="kss-nav__name">1.0 Style guide: components.opciones</span>
+                      </a>
+                    </li>
+                </ul>
+          </li>
+      </ul>
+    </section>
+    <!-- /navigation. -->
+
+
+    <!-- documentation. -->
+    <section class="kss-documentation">
+
+        <!--
+          display each section, in order.
+          the "root" element comes first in this loop, and can be detected using
+          the "#if @first" block as seen below.
+        -->
+            <header class="kss-section kss-section--depth-1" id="kssref-1">
+
+            <article class="kss-section__content">
+
+              <a class="kss-section__permalink" href="#kssref-1">
+                <h1 class="kss-section__item kss-section__item--depth-1">
+                  <span class="kss-section__ref">1</span>
+                  <span class="kss-section__name">1</span>
+                </h1>
+              </a>
+
+
+            </article>
+
+
+            </header>
+            <section class="kss-section kss-section--depth-2" id="kssref-1-0-style-guide-components">
+
+            <article class="kss-section__content">
+
+              <a class="kss-section__permalink" href="#kssref-1-0-style-guide-components">
+                <h2 class="kss-section__item kss-section__item--depth-2">
+                  <span class="kss-section__ref">1.1</span>
+                  <span class="kss-section__name">1.0 Style guide: components</span>
+                </h2>
+              </a>
+
+
+            </article>
+
+
+            </section>
+            <section class="kss-section kss-section--depth-3" id="kssref-1-0-style-guide-components-boton">
+
+            <article class="kss-section__content">
+                <p class="kss-section__source">Source: <span>components/_components.buttons.scss</span>, line <span>1</span></p>
+
+              <a class="kss-section__permalink" href="#kssref-1-0-style-guide-components-boton">
+                <h3 class="kss-section__item kss-section__item--depth-3">
+                  <span class="kss-section__ref">1.1.1</span>
+                  <span class="kss-section__name">Boton</span>
+                </h3>
+              </a>
+
+                <div class="kss-section__description"><p>Todo elemento que sirva para generar una accion.</p>
+</div>
+
+            </article>
+
+              <article class="kss-section__modifiers">
+                <h1 class="kss-modifiers__heading">Examples</h1>
+
+                  <h2 class="kss-modifiers__name">Default styling</h2>
+
+                <div class="kss-modifiers__example"><button class="boton [modifier class]">Button</button></div>
+
+                  <h2 class="kss-modifiers__name">.hover</h2>
+
+                  <p class="kss-modifiers__description">Highlight the button when hovered.</p>
+
+                  <div class="kss-modifiers__example"><button class="boton hover">Button</button></div>
+                  <h2 class="kss-modifiers__name">.transparente</h2>
+
+                  <p class="kss-modifiers__description">cuando el boton esta activo</p>
+
+                  <div class="kss-modifiers__example"><button class="boton transparente">Button</button></div>
+                  <h2 class="kss-modifiers__name">.activo</h2>
+
+                  <p class="kss-modifiers__description">cuando el boton esta activo</p>
+
+                  <div class="kss-modifiers__example"><button class="boton activo">Button</button></div>
+                  <h2 class="kss-modifiers__name">.primario</h2>
+
+                  <p class="kss-modifiers__description">color primario</p>
+
+                  <div class="kss-modifiers__example"><button class="boton primario">Button</button></div>
+                  <h2 class="kss-modifiers__name">.secundario</h2>
+
+                  <p class="kss-modifiers__description">color secundario</p>
+
+                  <div class="kss-modifiers__example"><button class="boton secundario">Button</button></div>
+                  <h2 class="kss-modifiers__name">.error</h2>
+
+                  <p class="kss-modifiers__description">color error</p>
+
+                  <div class="kss-modifiers__example"><button class="boton error">Button</button></div>
+                  <h2 class="kss-modifiers__name">.alerta</h2>
+
+                  <p class="kss-modifiers__description">color alerta</p>
+
+                  <div class="kss-modifiers__example"><button class="boton alerta">Button</button></div>
+                  <h2 class="kss-modifiers__name">.info</h2>
+
+                  <p class="kss-modifiers__description">color info</p>
+
+                  <div class="kss-modifiers__example"><button class="boton info">Button</button></div>
+                  <h2 class="kss-modifiers__name">.simple</h2>
+
+                  <p class="kss-modifiers__description">sin relleno (el color se aplica al fondo en :hover)</p>
+
+                  <div class="kss-modifiers__example"><button class="boton simple">Button</button></div>
+                  <h2 class="kss-modifiers__name">.ok</h2>
+
+                  <p class="kss-modifiers__description">color ok</p>
+
+                  <div class="kss-modifiers__example"><button class="boton ok">Button</button></div>
+                  <h2 class="kss-modifiers__name">.link</h2>
+
+                  <p class="kss-modifiers__description">boton como link (sin bordes o fondo)</p>
+
+                  <div class="kss-modifiers__example"><button class="boton link">Button</button></div>
+                  <h2 class="kss-modifiers__name">.disabled</h2>
+
+                  <p class="kss-modifiers__description">boton desabilitado</p>
+
+                  <div class="kss-modifiers__example"><button class="boton disabled">Button</button></div>
+                  <h2 class="kss-modifiers__name">.mini</h2>
+
+                  <p class="kss-modifiers__description">tamaño pequeño</p>
+
+                  <div class="kss-modifiers__example"><button class="boton mini">Button</button></div>
+                  <h2 class="kss-modifiers__name">.grande</h2>
+
+                  <p class="kss-modifiers__description">tamaño grande</p>
+
+                  <div class="kss-modifiers__example"><button class="boton grande">Button</button></div>
+                  <h2 class="kss-modifiers__name">.icono</h2>
+
+                  <p class="kss-modifiers__description">boton en forma de icono</p>
+
+                  <div class="kss-modifiers__example"><button class="boton icono">Button</button></div>
+              </article>
+
+                <article class="kss-section__markup">
+                  <pre><code class="language-markup">&lt;button class&#x3D;&quot;boton [modifier class]&quot;&gt;Button&lt;/button&gt;</code></pre>
+                </article>
+
+            </section>
+            <section class="kss-section kss-section--depth-3" id="kssref-1-0-style-guide-components-button">
+
+            <article class="kss-section__content">
+
+              <a class="kss-section__permalink" href="#kssref-1-0-style-guide-components-button">
+                <h3 class="kss-section__item kss-section__item--depth-3">
+                  <span class="kss-section__ref">1.1.2</span>
+                  <span class="kss-section__name">1.0 Style guide: components.button</span>
+                </h3>
+              </a>
+
+
+            </article>
+
+
+            </section>
+            <section class="kss-section kss-section--depth-4" id="kssref-1-0-style-guide-components-button-click">
+
+            <article class="kss-section__content">
+                <p class="kss-section__source">Source: <span>components/_components.buttons.scss</span>, line <span>278</span></p>
+
+              <a class="kss-section__permalink" href="#kssref-1-0-style-guide-components-button-click">
+                <h4 class="kss-section__item kss-section__item--depth-4">
+                  <span class="kss-section__ref">1.1.2.1</span>
+                  <span class="kss-section__name">ELEMENT.click</span>
+                </h4>
+              </a>
+
+                <div class="kss-section__description"><p>PARA SIMULAR UN BOTON EN CODIGO LEGACY</p>
+</div>
+
+            </article>
+
+              <article class="kss-section__modifiers">
+                <h1 class="kss-modifiers__heading">Examples</h1>
+
+                  <h2 class="kss-modifiers__name">Default styling</h2>
+
+                <div class="kss-modifiers__example"><li class="boton [modifier class]">esto se puede clickear</li></div>
+
+                  <h2 class="kss-modifiers__name">.click</h2>
+
+                  <p class="kss-modifiers__description">pone cursor = pointer</p>
+
+                  <div class="kss-modifiers__example"><li class="boton click">esto se puede clickear</li></div>
+              </article>
+
+                <article class="kss-section__markup">
+                  <pre><code class="language-markup">&lt;li class&#x3D;&quot;boton [modifier class]&quot;&gt;esto se puede clickear&lt;/li&gt;</code></pre>
+                </article>
+
+            </section>
+            <section class="kss-section kss-section--depth-3" id="kssref-1-0-style-guide-components-opciones">
+
+            <article class="kss-section__content">
+
+              <a class="kss-section__permalink" href="#kssref-1-0-style-guide-components-opciones">
+                <h3 class="kss-section__item kss-section__item--depth-3">
+                  <span class="kss-section__ref">1.1.3</span>
+                  <span class="kss-section__name">1.0 Style guide: components.opciones</span>
+                </h3>
+              </a>
+
+
+            </article>
+
+
+            </section>
+            <section class="kss-section kss-section--depth-4" id="kssref-1-0-style-guide-components-opciones-boton">
+
+            <article class="kss-section__content">
+                <p class="kss-section__source">Source: <span>components/_components.buttons.scss</span>, line <span>297</span></p>
+
+              <a class="kss-section__permalink" href="#kssref-1-0-style-guide-components-opciones-boton">
+                <h4 class="kss-section__item kss-section__item--depth-4">
+                  <span class="kss-section__ref">1.1.3.1</span>
+                  <span class="kss-section__name">Contenedor de opciones</span>
+                </h4>
+              </a>
+
+                <div class="kss-section__description"><p>Al final de un listado si el item tiene opciones esto sirve apra contenerlas y alinearlas</p>
+</div>
+
+            </article>
+
+              <article class="kss-section__modifiers">
+                <h1 class="kss-modifiers__heading">Examples</h1>
+
+                  <h2 class="kss-modifiers__name">Default styling</h2>
+
+                <div class="kss-modifiers__example"><div class="opciones"><button class="boton">opcion</button></div></div>
+
+                  <h2 class="kss-modifiers__name">.click</h2>
+
+                  <p class="kss-modifiers__description">pone cursor = pointer</p>
+
+                  <div class="kss-modifiers__example"><div class="opciones"><button class="boton">opcion</button></div></div>
+              </article>
+
+                <article class="kss-section__markup">
+                  <pre><code class="language-markup">&lt;div class&#x3D;&quot;opciones&quot;&gt;&lt;button class&#x3D;&quot;boton&quot;&gt;opcion&lt;/button&gt;&lt;/div&gt;</code></pre>
+                </article>
+
+            </section>
+    </section>
+    <!-- /documentation. -->
+
+
+
+  <!-- scripts. -->
+  <script src="kss-assets/vendor/jquery.js"></script>
+  <script src="kss-assets/vendor/prism.js"></script>
+  <script src="kss-assets/js/kss.js"></script>
+  
+  <!-- /scripts. -->
+
+  </body>
+</html>

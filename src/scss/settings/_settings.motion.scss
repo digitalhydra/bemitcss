@@ -1,0 +1,12 @@
+///* ========================================================================
+//   #GLOBAL MOTION
+//   ======================================================================== */
+// The global settings file contains any project-wide variables; things that
+// need to be made available to the entire codebase.
+
+// 
+$curva-animacion: cubic-bezier(.25, .8, .25, 1);
+$tiempo-animacion: .3s;
+
+// Standardise some UI treatments.
+$global-transition: all #{$tiempo-animacion} #{$curva-animacion} !default;

@@ -1,0 +1,45 @@
+///* ========================================================================
+//   #CLEARFIX
+//   ======================================================================== */
+
+// Mixin to drop micro clearfix into a selector. Further reading:
+// http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
+//
+// .usage {
+//   @include inuit-clearfix();
+// }
+@mixin inuit-clearfix() {
+  &:after {
+    content: '' !important;
+    display: block !important;
+    clear: both !important;
+  }
+}
+
+// Mixin to quickly apply accessible hiding to elements.
+@mixin inuit-hidden-visually() {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
+
+@mixin scaler($prefix, $property, $base) {
+  @for $i from 1 through 10 {
+    @if $i < 2 {
+      #{$prefix} {
+        #{$property}: $base * $i;
+      }
+    } @else {
+      #{$prefix}--x#{$i} {
+        #{$property}: $base * $i;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+/* ==========================================================================
+   #LIST-INLINE
+   ========================================================================== */
+
+/**
+ * The list-inline object simply displays a list of items in one line.
+ */
+
+.o-list-inline {
+  margin-left: 0;
+  list-style: none;
+}
+
+.o-list-inline__item {
+  display: inline-block;
+}
+
+// CHIPS
+.o-chip {
+  padding: 4px 7px;
+  border-radius: 4px;
+  background-color: #707070;
+  color: $color-blanco;
+  @extend .u-tiny-text;
+}

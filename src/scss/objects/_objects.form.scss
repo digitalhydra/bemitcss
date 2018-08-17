@@ -1,0 +1,277 @@
+/* ==========================================================================
+   #FORM
+   ========================================================================== */
+
+/**
+ * The basic form objects
+ */
+.o-contenedor-campo {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: rem-calc(15px);
+  flex-wrap: wrap;
+  position: relative;
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='number'],
+  input[type='file'],
+  select,
+  textarea {
+    flex: 9;
+    background-color: $color-blanco;
+    border: 1px solid $color-borde-campo;
+    font-size: rem-calc(14px);
+    line-height: rem-calc(26);
+    // height: rem-calc(38px);
+    border-radius: rem-calc(3px);
+    padding: rem-calc(8px 12px);
+    color: $color-negro;
+    &::-webkit-input-placeholder {
+      color: $color-negro;
+    }
+    &.mini {
+      font-size: rem-calc(14px);
+      line-height: rem-calc(22);
+      // height: rem-calc(28px);
+      padding: rem-calc(4px 8.7px);
+    }
+    &:last-child {
+      width: 100%;
+      min-width: rem-calc(100px);
+    }
+    &:focus:not([readonly]) {
+      border: 1px solid $color-borde-campo-hover;
+    }
+    &[readonly] {
+      color: $color-deshabilitado;
+    }
+    &.al-inicio {
+      text-align: left;
+    }
+    &.al-centro {
+      text-align: center;
+    }
+    &.al-final {
+      text-align: right;
+    }
+  }
+  textarea {
+    height: inherit;
+  }
+  .boton {
+    flex: 1;
+    border-radius: 0 3px 3px 0;
+    &.sin-texto {
+      width: rem-calc(45px);
+      min-width: rem-calc(45px);
+      max-width: rem-calc(45px);
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      i {
+        padding: 0;
+      }
+    }
+  }
+  .boton + input[type='text'],
+  .boton + input[type='password'],
+  .boton + input[type='email'],
+  .boton + input[type='file'],
+  .boton + input[type='number'] {
+    border-radius: 0 3px 3px 0;
+  }
+  input[type='text'] + .boton,
+  input[type='password'] + .boton,
+  input[type='email'] + .boton,
+  input[type='file'] + .boton,
+  input[type='number'] + .boton {
+    border-radius: 0 3px 3px 0;
+  }
+  input[type='text'],
+  input[type='password'],
+  input[type='number'],
+  input[type='email'],
+  input[type='file'] {
+    &:first-child:not(:last-child) {
+      border-radius: 3px 0 0 3px;
+    }
+  }
+
+  input[type='text'],
+  input[type='password'],
+  input[type='email'],
+  input[type='number'],
+  input[type='file'] {
+    &:only-child {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+    }
+  }
+  .boton:first-of-type {
+    border-radius: 3px 0 0 3px;
+  }
+  .boton:first-child {
+    border-radius: 3px 0 0 3px;
+    margin-right: 0;
+  }
+  .boton:last-child {
+    border-radius: 0 3px 3px 0;
+    margin-right: 0;
+  }
+  &.anidado {
+    margin-bottom: 0;
+    z-index: 2;
+    & + .o-contenedor-campo {
+      // background: $color-borde-buscador;
+      padding: rem-calc(10px);
+      margin-top: -1px;
+      z-index: 1;
+    }
+  }
+  &.error {
+    position: relative;
+    input[type='text'],
+    input[type='password'],
+    input[type='number'],
+    input[type='email'],
+    input[type='file'],
+    select,
+    textarea {
+      border-color: $color-error;
+    }
+    &:after {
+      content: attr(data-mensaje-error);
+      position: relative;
+      color: $color-error;
+      font-size: rem-calc(12px);
+      line-height: rem-calc(12px);
+      display: block;
+      width: 100%;
+      min-height: rem-calc(15px);
+      bottom: 0;
+      font-style: italic;
+    }
+    &.invalido:after {
+      content: attr(data-mensaje-invalido);
+    }
+  }
+  &.con-label {
+    flex-wrap: wrap;
+    label {
+      min-height: rem-calc(20px);
+      width: 100%;
+      display: block;
+      font-weight: 700;
+      line-height: rem-calc(19);
+      font-size: rem-calc(14px);
+      margin: 0;
+      i {
+        color: $color-secundario;
+        margin-right: rem-calc(5px);
+      }
+    }
+  }
+  .requerido {
+    color: $color-primario;
+  }
+}
+
+.o-input {
+  background-color: $color-blanco;
+  border: 1px solid $color-borde-campo;
+  font-size: rem-calc(14px);
+  line-height: rem-calc(26);
+  border-radius: rem-calc(3px);
+  padding: rem-calc(8px 12px);
+  color: $color-negro;
+  display: inline-block;
+  margin: auto 5px;
+  &::-webkit-input-placeholder {
+    color: $color-negro;
+  }
+  &--mini {
+    font-size: rem-calc(14px);
+    line-height: rem-calc(22);
+    // height: rem-calc(28px);
+    padding: rem-calc(4px 8.7px);
+  }
+  &:focus:not([readonly]) {
+    border: 1px solid $color-borde-campo-hover;
+  }
+  &[readonly] {
+    color: $color-deshabilitado;
+  }
+  &--al-inicio {
+    text-align: left;
+  }
+  &--al-centro {
+    text-align: center;
+  }
+  &--al-final {
+    text-align: right;
+  }
+}
+.o-select {
+  background-color: $color-blanco;
+  border: 1px solid $color-borde-campo;
+  font-size: rem-calc(14px);
+  line-height: rem-calc(26);
+  border-radius: rem-calc(3px);
+  color: $color-negro;
+  display: flex;
+  margin: 0 5px;
+  position: relative;
+  // min-width: 150px;
+  max-width: 100%;
+  max-height: 38px;
+  flex-direction: column;
+  overflow: hidden;
+  &__item {
+    border-color: transparent;
+    border-radius: 0;
+    background-color: $color-blanco;
+    padding: rem-calc(8px 12px);
+    min-height: 27px;
+    cursor: pointer;
+    &:hover {
+      background-color: $color-primario;
+      color: $color-blanco;
+    }
+    &--selected {
+      padding-right: 15px !important;
+      border-left: none !important;
+      border-right: none !important;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        border-top: 4px solid $color-texto;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+      }
+    }
+  }
+  &--mini {
+    max-height: 28px;
+    .o-select__item {
+      font-size: rem-calc(14px);
+      line-height: rem-calc(22);
+      padding: rem-calc(4px 8.7px);
+    }
+  }
+  &--activo {
+    overflow: visible;
+    height: auto;
+    .o-select__item {
+      border-left: 1px solid $color-borde-campo;
+      border-right: 1px solid $color-borde-campo;
+    }
+  }
+}

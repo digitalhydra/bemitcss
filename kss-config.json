@@ -1,0 +1,27 @@
+{
+  "title": "Starter Style Guide",
+
+  // Source tells KSS where the CSS, Sass, or SCSS is that it should parse for documentation comments. 
+  // Here we are assuming your sass is in a directory at the root level of your project.
+  "source": "src/sass/main.scss",
+
+  // Destination tells KSS where to compile your style guide to.
+  "destination": "styleguide/",
+
+  // Builder tells KSS where to look for a theme. 
+  // If you aren't using michelangelo, you don't need this.
+  "builder": "node_modules/michelangelo/kss_styleguide/custom-template/"
+
+  // CSS gives KSS the path to your CSS, so it can pull your styles into the style guide. 
+  // The path needs to be relative to your style guide destination.
+  // Here, our style guide is in /styleguide and our compiled css is at our project root.
+  // "css": [
+  //   "/dist/css/main.css"
+  // ]
+  // If you want to include any javascript files, add this block, with the path to your javascript file. 
+  // Also relative to your style guide destination.
+ // Optional.
+  // "js" : [
+  //   "../bundle.js"
+  // ]
+}

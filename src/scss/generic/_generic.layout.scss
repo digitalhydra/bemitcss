@@ -1,0 +1,19 @@
+/* ==========================================================================
+   #SHARED
+   ========================================================================== */
+
+/**
+ * Shared declarations for certain elements.
+ */
+
+/**
+ * Always declare margins in the same direction:
+ * csswizardry.com/2012/06/single-direction-margin-declarations
+ */
+
+/* stylelint-disable selector-list-comma-newline-after */
+
+$breakpoint-classes: to-list($breakpoint-settings, 'keys');
+$breakpoints-keys: to-list($breakpoint-settings, 'keys');
+
+@debug $breakpoints-classes;

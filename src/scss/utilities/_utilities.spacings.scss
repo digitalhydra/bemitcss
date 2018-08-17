@@ -1,0 +1,72 @@
+/* ==========================================================================
+   #SPACINGS
+   ========================================================================== */
+
+/**
+ * Utility classes to put specific spacing values onto elements. The below loop
+ * will generate us a suite of classes like:
+ *
+ *   .u-margin-top {}
+ *   .u-padding-left-large {}
+ *   .u-margin-right-small {}
+ *   .u-padding {}
+ *   .u-padding-right-none {}
+ *   .u-padding-horizontal {}
+ *   .u-padding-vertical-small {}
+ */
+
+/* stylelint-enable string-quotes */
+
+$base-push: ($ssg-global-spacing-unit * $ssg-global-spacing-unit-factor-small);
+$negative-base-push: $base-push * -1;
+
+.u-no-padding-right {
+  padding-right: 0 !important;
+}
+.u-no-padding-left {
+  padding-left: 0 !important;
+}
+.u-no-padding-top {
+  padding-top: 0 !important;
+}
+.u-no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+.u-no-margin {
+  margin: 0 !important;
+}
+.u-no-padding {
+  margin: 0 !important;
+}
+.u-full-padding {
+  padding: $base-push;
+}
+
+// PUSHERS
+// .u-push-top
+@include scaler('.u-push-top', 'margin-top', $base-push);
+// u-push-top--inside
+@include scaler('.u-push-top--inside', 'padding-top', $base-push);
+// .u-push-top--negative
+@include scaler('.u-push-top--negative', 'margin-top', $negative-base-push);
+
+// .u-push-bottom
+@include scaler('.u-push-bottom', 'margin-bottom', $base-push);
+// u-push-bottom--inside
+@include scaler('.u-push-bottom--inside', 'padding-bottom', $base-push);
+// .u-push-bottom--negative
+@include scaler('.u-push-bottom--negative', 'margin-bottom', $negative-base-push);
+
+// .u-push-left
+@include scaler('.u-push-left', 'margin-left', $base-push);
+// u-push-left--inside
+@include scaler('.u-push-left--inside', 'padding-left', $base-push);
+// .u-push-left--negative
+@include scaler('.u-push-left--negative', 'margin-left', $negative-base-push);
+
+// .u-push-rigth
+@include scaler('.u-push-rigth', 'margin-rigth', $base-push);
+// u-push-rigth--inside
+@include scaler('.u-push-rigth--inside', 'padding-rigth', $base-push);
+// .u-push-rigth--negative
+@include scaler('.u-push-rigth--negative', 'margin-rigth', $negative-base-push);

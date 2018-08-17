@@ -1,0 +1,315 @@
+/*
+Boton
+
+Todo elemento que sirva para generar una accion.
+
+Markup:
+<button class="boton {{modifier_class}}">Button</button>
+
+.hover - Highlight the button when hovered.
+.transparente - cuando el boton esta activo
+.activo - cuando el boton esta activo
+.primario - color primario
+.secundario - color secundario
+.error - color error
+.alerta - color alerta
+.info - color info
+.simple - sin relleno (el color se aplica al fondo en :hover)
+.ok - color ok
+.link - boton como link (sin bordes o fondo)
+.disabled - boton desabilitado
+.mini - tamaño pequeño
+.grande - tamaño grande
+.icono - boton en forma de icono
+
+Styleguide 1.0
+Style guide: components.boton
+*/
+.c-boton {
+  border: 1px solid $color-primario;
+  background-color: $color-primario;
+  color: $color-blanco;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  padding: rem-calc(8px 19px);
+  text-decoration: none;
+  display: inline-block;
+  align-items: center;
+
+  // CON FONDO DE COLORES PRIMARIOS
+  &--transparente {
+    background-color: transparent;
+    border-color: transparent;
+    padding: 0;
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+  &--primario:not(.icono) {
+    background-color: $color-primario;
+    border-color: $color-primario;
+    &:hover {
+      background-color: lighten($color-primario, 10%);
+      border-color: lighten($color-primario, 10%);
+    }
+  }
+  &--secundario:not(.icono) {
+    background-color: $color-secundario;
+    border-color: $color-secundario;
+    &:hover {
+      background-color: lighten($color-secundario, 10%);
+      border-color: lighten($color-secundario, 10%);
+    }
+  }
+  &--ok:not(.icono) {
+    background-color: $color-ok;
+    border-color: $color-ok;
+
+    &:hover {
+      background-color: lighten($color-ok, 10%);
+      border-color: lighten($color-ok, 10%);
+    }
+  }
+  &--error:not(.icono) {
+    background-color: $color-error;
+    border-color: $color-error;
+
+    &:hover {
+      background-color: lighten($color-error, 10%);
+      border-color: lighten($color-error, 10%);
+    }
+  }
+  &--alerta:not(.icono) {
+    color: $color-blanco;
+    background-color: $color-alerta;
+    border-color: $color-alerta;
+
+    &:hover {
+      background-color: lighten($color-alerta, 10%);
+      border-color: lighten($color-alerta, 10%);
+    }
+  }
+  &--info:not(.icono) {
+    color: $color-blanco;
+    background-color: $color-info;
+    border-color: $color-info;
+
+    &:hover {
+      background-color: lighten($color-info, 10%);
+      border-color: lighten($color-info, 10%);
+    }
+  }
+  // ESTILOS DE SOLO BORDER Y SIN FONDO
+  &__simple {
+    color: $color-negro;
+    background-color: transparent;
+    border-color: transparent;
+    &--primario:not(.icono) {
+      background-color: transparent;
+      border-color: $color-primario;
+      color: $color-primario;
+    }
+    &--secundario:not(.icono) {
+      background-color: transparent;
+      border-color: $color-secundario;
+      color: $color-secundario;
+    }
+    &--ok:not(.icono) {
+      background-color: transparent;
+      border-color: $color-ok;
+      color: $color-ok;
+    }
+    &--error:not(.icono) {
+      background-color: transparent;
+      border-color: $color-error;
+      color: $color-error;
+    }
+    &--alerta:not(.icono) {
+      color: $color-negro;
+      background-color: transparent;
+      border-color: $color-alerta;
+      color: $color-alerta;
+    }
+
+    &__hover {
+      &--primario:hover {
+        background-color: $color-primario;
+        border-color: $color-primario;
+        color: $color-blanco;
+      }
+      &--secundario:hover {
+        background-color: $color-secundario;
+        border-color: $color-secundario;
+        color: $color-blanco;
+      }
+      &--alerta:hover {
+        background-color: $color-alerta;
+        border-color: $color-alerta;
+        color: $color-blanco;
+      }
+      &--error:hover {
+        background-color: $color-error;
+        border-color: $color-error;
+        color: $color-blanco;
+      }
+    }
+  }
+  // OTROS ESTILOS
+  &__disabled,
+  &:disabled {
+    background-color: #dbe4ea !important;
+    border-color: #dbe4ea !important;
+    color: #6c7a86;
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+  &__link {
+    background: transparent;
+    background-color: transparent;
+    border-color: transparent;
+    color: $color-negro;
+    i {
+      color: $color-link;
+    }
+    &:hover {
+      color: $color-link;
+    }
+  }
+  // tamaños
+  &--grande {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+  }
+  &--mini {
+    padding: rem-calc(5px 7px);
+    font-size: rem-calc(14px);
+    line-height: rem-calc(19);
+    font-weight: 400;
+  }
+  // SOLO ICONOS
+  &__icono {
+    background-color: transparent;
+    border-color: transparent;
+    line-height: rem-calc(24px);
+    height: auto;
+    i {
+      padding: 0;
+    }
+    &--primario i {
+      color: $color-primario;
+    }
+    &--primario:hover,
+    &--primario.con-borde {
+      border-color: $color-primario;
+    }
+    &--secundario i {
+      color: $color-secundario;
+    }
+    &--secundario:hover,
+    &--secundario.con-borde {
+      border-color: $color-secundario;
+    }
+    &--ok i {
+      color: $color-ok;
+    }
+    &--ok:hover,
+    &--ok.con-borde {
+      border-color: $color-ok;
+    }
+    &--alerta i {
+      color: $color-alerta;
+    }
+    &--alerta:hover,
+    &--alerta.con-borde {
+      border-color: $color-alerta;
+    }
+    &--error i {
+      color: $color-error;
+    }
+    &--error:hover,
+    &--error.con-borde {
+      border-color: $color-error;
+    }
+  }
+  // PARA SIMULAR SELECT
+  &__selector {
+    position: relative;
+  }
+  &__opcion {
+    border-radius: 0;
+    display: flex;
+    background-color: transparent;
+    border: transparent;
+    font-size: rem-calc(14px);
+    padding: rem-calc(6px 8px);
+    color: $color-negro;
+    text-align: left;
+    &:hover {
+      border-radius: 0;
+      background-color: $color-secundario;
+      border-color: $color-secundario;
+      color: $color-blanco;
+    }
+    &.activo {
+      border-radius: 0;
+      background-color: $color-primario;
+      border-color: $color-primario;
+      color: $color-blanco;
+    }
+  }
+}
+
+/*
+ELEMENT.click
+
+PARA SIMULAR UN BOTON EN CODIGO LEGACY
+
+Markup:
+<li class="boton {{modifier_class}}">esto se puede clickear</li>
+
+.click - pone cursor = pointer
+
+Styleguide 1.0
+Style guide: components.button.click
+*/
+.c-click {
+  cursor: pointer;
+}
+
+/*
+Contenedor de opciones
+
+Al final de un listado si el item tiene opciones esto sirve apra contenerlas y alinearlas
+
+Markup:
+<div class="opciones"><button class="boton">opcion</button></div>
+
+.click - pone cursor = pointer
+
+Styleguide 1.0
+Style guide: components.opciones.boton
+*/
+.c-opciones,
+.c-opcion {
+  .c-boton,
+  li,
+  > div {
+    margin-right: 7px;
+    position: relative;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+// para crear handlers para eventos JS sin usar un fromato especifico de boton
+// usa flex para alinear el contenido como fila que es el caso de uso mas comun.
+button.c-transparente {
+  width: 100%;
+  display: flex;
+}

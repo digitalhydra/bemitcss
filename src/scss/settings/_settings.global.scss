@@ -1,0 +1,45 @@
+///* ========================================================================
+//   #GLOBAL
+//   ======================================================================== */
+// The global settings file contains any project-wide variables; things that
+// need to be made available to the entire codebase.
+
+// Standardise some UI treatments.
+$global-radius: 3px !default;
+
+//
+$fuente-alt: 'Raleway', sans-serif;
+$fuente-sans: 'Helvetica Neue', HelveticaNeue, 'Arimo', 'Roboto', Helvetica, Arial, sans-serif;
+$fuente-general: $fuente-sans;
+
+// width para XY grid de foundation
+$global-width: rem-calc(1200px);
+
+/// Sets the text direction of the CSS. Can be either `ltr` or `rtl`.
+/// @type Keyword
+$global-text-direction: ltr;
+
+// Internal variables used for text direction
+$global-left: if($global-text-direction == rtl, right, left);
+$global-right: if($global-text-direction == rtl, left, right);
+
+// $breakpoints: (
+//   small: 0,
+//   medium: 640px,
+//   large: 1024px,
+//   xlarge: 1200px,
+//   xxlarge: 1440px
+// );
+
+$breakpoint-settings: (
+  small: (min-width: null, max-width: 479px, base-font: 16px, vertical-rhythm: 1.3),
+  medium: (min-width: 640px, max-width: 959px, base-font: 18px, vertical-rhythm: 1.414),
+  large: (min-width: 1024px, max-width: 1099px, base-font: 18px, vertical-rhythm: 1.5),
+  xlarge: (min-width: 1200px, max-width: null, base-font: 21px, vertical-rhythm: 1.618),
+  xxlarge: (min-width: 1440px, max-width: null, base-font: 21px, vertical-rhythm: 1.618)
+);
+
+/// @type Keyword
+$print-breakpoint: large !default;
+
+$zero-breakpoint: small !default;

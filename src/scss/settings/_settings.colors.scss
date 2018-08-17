@@ -1,0 +1,40 @@
+///* ========================================================================
+//   #COLORS
+//   ======================================================================== */
+
+// colores bases
+$color-blanco: #fff;
+$color-negro: #000;
+$color-primario: #2c93e5;
+$color-secundario: #adb7be;
+$color-alerta: #f7c600;
+$color-error: #ea3131;
+$color-info: #1cb7af;
+$color-ok: #46c35f;
+$color-deshabilitado: #f6f8fa;
+$color-accesibilidad: #1b8a97;
+$color-alternativo: #e2e2e2;
+
+$color-link: #1b8a97;
+
+$color-borde-campo: #ccc;
+$color-borde-campo-hover: $color-primario;
+
+$color-texto: #1e3146;
+
+$color-separador: #f0f5f9;
+$color-texto-alt: #575962;
+
+$colors: (
+  blanco: #fff,
+  negro: #000,
+  primario: #2c93e5,
+  secundario: #adb7be,
+  alerta: #f7c600,
+  error: #ea3131,
+  info: #1cb7af,
+  ok: #46c35f,
+  deshabilitado: #f6f8fa,
+  accesibilidad: #1b8a97,
+  alternativo: #e2e2e2
+);

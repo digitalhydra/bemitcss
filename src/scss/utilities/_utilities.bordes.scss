@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #HIDE
+   ========================================================================== */
+
+/**
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.u-border {
+  &--top {
+    border-top: 1px solid $color-separador;
+  }
+  &--bottom {
+    border-bottom: 1px solid $color-separador;
+  }
+  &--left {
+    border-left: 1px solid $color-separador;
+  }
+  &--right {
+    border-right: 1px solid $color-separador;
+  }
+}

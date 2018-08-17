@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #AVATAR
+   ========================================================================== */
+
+/**
+ * Avatares de usuario
+ * 
+ *
+ */
+.o-avatar{
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+  &--tiny{
+    width: 34px;
+    height: 34px;
+  }
+  &--small{
+    width: 52px;
+    height: 52px;
+  }
+  &--big{
+    height: 85px;
+    width: 85px;
+  }
+}

@@ -1,0 +1,1408 @@
+@charset "UTF-8";
+/* ==========================================================================
+   SYSTEMICO STYLE GUIDE
+   ========================================================================== */
+/**
+ * moded fork from inuitcss, by @csswizardry
+ *
+ * github.com/inuitcss | inuitcss.com
+ */
+/**
+ * This is an example inuitcss manifest file. DO NOT MODIFY THIS FILE DIRECTLY.
+ * Instead, copy and paste it into your own CSS directory and make additions,
+ * extensions, and modifications there.
+ */
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Config...............Project-level configuration and feature switches.
+ * Core.................inuitcss’ core and setup settings.
+ * Global...............Project-wide variables and settings.
+ *
+ * TOOLS
+ * Font-size............A mixin which guarantees baseline-friendly line-heights.
+ * Clearfix.............Micro clearfix mixin.
+ * Hidden...............Mixin for hiding elements.
+ * Sass MQ..............inuitcss’ default media query manager.
+ *
+ * GENERIC
+ * Box-sizing...........Better default `box-sizing`.
+ * Normalize.css........A level playing field using @necolas’ Normalize.css.
+ * Reset................A tiny reset to complement Normalize.css.
+ * Shared...............Sensibly and tersely share some global commonalities
+ *                      (particularly useful when managing vertical rhythm).
+ *
+ * ELEMENTS
+ * Page.................Set up our document’s default `font-size` and
+ *                      `line-height`.
+ * Headings.............Very minimal (i.e. only font-size information) for
+ *                      headings 1 through 6.
+ * Images...............Base image styles.
+ * Tables...............Simple table styles.
+ *
+ * OBJECTS
+ * Wrapper..............Page constraint object.
+ * Layout...............Generic layout module.
+ * Media................Image- and text-like content side by side. The
+ *                      poster-child of OOCSS.
+ * Flag.................Table-layout-based advancement on the Media object.
+ * List-bare............Lists with no bullets or indents.
+ * List-inline..........A list whose items all site in a line.
+ * Box..................Simple boxing abstraction.
+ * Block................Image-on-top-of-text object.
+ * Ratio................A container for maintaining aspect ratio of content.
+ * Crop.................Provide a cropping context for media (images, etc.).
+ * Table................Classes for manipulating `table`s.
+ * Pack.................Pack items into available horizontal space.
+ *
+ * COMPONENTS
+ * Buttons..............An example button component, and how it fits into the
+ *                      inuitcss framework.
+ *
+ * UTILITIES
+ * Clearfix.............Bind our clearfix onto a utility class.
+ * Widths...............Simple width helper classes.
+ * Headings.............Reassigning our heading styles to helper classes.
+ * Spacings.............Nudge bits of the DOM around with these spacing
+ *                      classes.
+ * Responsive-Spacings..Enhances the function of normal spacings for
+ *                      responsive usage.
+ * Print................Reset-like styles taken from the HTML5 Boilerplate.
+ * Hide.................Helper classes to hide content
+ */
+/* ==========================================================================
+   #BOX-SIZING
+   ========================================================================== */
+/**
+ * More sensible default box-sizing:
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0; }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block; }
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block; }
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none; }
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details,
+menu {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block; }
+
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none; }
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none; }
+
+/* ==========================================================================
+   #RESET
+   ========================================================================== */
+/**
+ * A very simple reset that sits on top of Normalize.css.
+ */
+body,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, pre,
+dl, dd, ol, ul,
+figure,
+hr,
+fieldset, legend {
+  margin: 0;
+  padding: 0; }
+
+/**
+ * Remove trailing margins from nested lists.
+ */
+li > ol,
+li > ul {
+  margin-bottom: 0; }
+
+/**
+ * Remove default table spacing.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/**
+ * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
+ *    on fieldsets.
+ */
+fieldset {
+  min-width: 0;
+  /* [1] */
+  border: 0; }
+
+/* ==========================================================================
+   #SHARED
+   ========================================================================== */
+/**
+ * Shared declarations for certain elements.
+ */
+/**
+ * Always declare margins in the same direction:
+ * csswizardry.com/2012/06/single-direction-margin-declarations
+ */
+/* stylelint-disable selector-list-comma-newline-after */
+address,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, pre,
+dl, ol, ul,
+figure,
+hr,
+table,
+fieldset {
+  margin-bottom: 24px; }
+
+/**
+ * Consistent indentation for lists.
+ */
+dd, ol, ul {
+  margin-left: 24px; }
+
+/* stylelint-enable selector-list-comma-newline-after */
+/* ==========================================================================
+   #PAGE
+   ========================================================================== */
+/**
+ * Simple page-level setup.
+ *
+ * 1. Set the default `font-size` and `line-height` for the entire project,
+ *    sourced from our default variables. The `font-size` is calculated to exist
+ *    in ems, the `line-height` is calculated to exist unitlessly.
+ * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 3. Ensure the page always fills at least the entire height of the viewport.
+ */
+html {
+  font-size: 1em;
+  /* [1] */
+  line-height: 1.5;
+  /* [1] */
+  overflow-y: scroll;
+  /* [2] */
+  min-height: 100%;
+  /* [3] */ }
+
+/* ==========================================================================
+   #HEADINGS
+   ========================================================================== */
+/**
+ * Simple default styles for headings 1 through 6. Anything more opinionated
+ * than simple font-size changes should likely be applied via classes (see:
+ * http://csswizardry.com/2016/02/managing-typography-on-large-apps/).
+ */
+h1 {
+  font-size: 36px;
+  font-size: 2.25rem;
+  line-height: 1.33333; }
+
+h2 {
+  font-size: 28px;
+  font-size: 1.75rem;
+  line-height: 1.71429; }
+
+h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1; }
+
+h4 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.2; }
+
+h5 {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.33333; }
+
+h6 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5; }
+
+/* ==========================================================================
+   #IMAGES
+   ========================================================================== */
+/**
+ * 1. Fluid images for responsive purposes.
+ * 2. Offset `alt` text from surrounding copy.
+ * 3. Setting `vertical-align` removes the whitespace that appears under `img`
+ *    elements when they are dropped into a page as-is. Safer alternative to
+ *    using `display: block;`.
+ */
+img {
+  max-width: 100%;
+  /* [1] */
+  font-style: italic;
+  /* [2] */
+  vertical-align: middle;
+  /* [3] */ }
+
+/**
+ * 1. If a `width` and/or `height` attribute have been explicitly defined, let’s
+ *    not make the image fluid.
+ */
+img[width],
+img[height] {
+  /* [1] */
+  max-width: none; }
+
+/* ==========================================================================
+   #TABLES
+   ========================================================================== */
+/**
+ * 1. Ensure tables fill up as much space as possible.
+ */
+table {
+  width: 100%;
+  /* [1] */ }
+
+/* ==========================================================================
+   #LAYOUT
+   ========================================================================== */
+/**
+ * Grid-like layout system.
+ *
+ * The layout object provides us with a column-style layout system. This file
+ * contains the basic structural elements, but classes should be complemented
+ * with width utilities, for example:
+ *
+ *   <div class="o-layout">
+ *     <div class="o-layout__item  u-1/2">
+ *     </div>
+ *     <div class="o-layout__item  u-1/2">
+ *     </div>
+ *   </div>
+ *
+ * The above will create a two-column structure in which each column will
+ * fluidly fill half of the width of the parent. We can have more complex
+ * systems:
+ *
+ *   <div class="o-layout">
+ *     <div class="o-layout__item  u-1/1  u-1/3@medium">
+ *     </div>
+ *     <div class="o-layout__item  u-1/2  u-1/3@medium">
+ *     </div>
+ *     <div class="o-layout__item  u-1/2  u-1/3@medium">
+ *     </div>
+ *   </div>
+ *
+ * The above will create a system in which the first item will be 100% width
+ * until we enter our medium breakpoint, when it will become 33.333% width. The
+ * second and third items will be 50% of their parent, until they also become
+ * 33.333% width at the medium breakpoint.
+ *
+ * We can also manipulate entire layout systems by adding a series of modifiers
+ * to the `.o-layout` block. For example:
+ *
+ *   <div class="o-layout  o-layout--reverse">
+ *
+ * This will reverse the displayed order of the system so that it runs in the
+ * opposite order to our source, effectively flipping the system over.
+ *
+ *   <div class="o-layout  o-layout--[right|center]">
+ *
+ * This will cause the system to fill up from either the centre or the right
+ * hand side. Default behaviour is to fill up the layout system from the left.
+ *
+ * There are plenty more options available to us: explore them below.
+ */
+/* ==========================================================================
+   #LIST-BARE
+   ========================================================================== */
+/**
+ * Strip list-like appearance from lists by removing their bullets, and any
+ * indentation.
+ *
+ * Note: Declaring the item-class might not be necessary everywhere but
+ * is for example in <dl> lists for the <dd> childs.
+ */
+.o-list-bare {
+  list-style: none;
+  margin-left: 0; }
+
+.o-list-bare__item {
+  margin-left: 0; }
+
+/* ==========================================================================
+   #LIST-INLINE
+   ========================================================================== */
+/**
+ * The list-inline object simply displays a list of items in one line.
+ */
+.o-list-inline {
+  margin-left: 0;
+  list-style: none; }
+
+.o-list-inline__item {
+  display: inline-block; }
+
+/* ==========================================================================
+   #TABLE
+   ========================================================================== */
+/**
+ * A simple object for manipulating the structure of HTML `table`s.
+ */
+.o-table {
+  width: 100%; }
+
+/* Equal-width table cells.
+   ========================================================================== */
+/**
+ * `table-layout: fixed` forces all cells within a table to occupy the same
+ * width as each other. This also has performance benefits: because the browser
+ * does not need to (re)calculate cell dimensions based on content it discovers,
+ * the table can be rendered very quickly. Further reading:
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout#Values
+ */
+.o-table--fixed {
+  table-layout: fixed; }
+
+/* Size variants.
+   ========================================================================== */
+.o-table--tiny th,
+.o-table--tiny td {
+  padding: 6px; }
+
+.o-table--small th,
+.o-table--small td {
+  padding: 12px; }
+
+.o-table--large th,
+.o-table--large td {
+  padding: 48px; }
+
+.o-table--huge th,
+.o-table--huge td {
+  padding: 96px; }
+
+/* ==========================================================================
+   #FORM
+   ========================================================================== */
+/**
+ * The basic form objects
+ */
+.contenedor-campo {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  position: relative; }
+  .contenedor-campo input[type="text"],
+  .contenedor-campo input[type="password"],
+  .contenedor-campo input[type="number"],
+  .contenedor-campo input[type="file"],
+  .contenedor-campo select,
+  .contenedor-campo textarea {
+    flex: 9;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    line-height: 1rem;
+    border-radius: 3px;
+    padding: 8px 12px;
+    color: #000;
+    height: 39px; }
+    .contenedor-campo input[type="text"]::-webkit-input-placeholder,
+    .contenedor-campo input[type="password"]::-webkit-input-placeholder,
+    .contenedor-campo input[type="number"]::-webkit-input-placeholder,
+    .contenedor-campo input[type="file"]::-webkit-input-placeholder,
+    .contenedor-campo select::-webkit-input-placeholder,
+    .contenedor-campo textarea::-webkit-input-placeholder {
+      color: #000; }
+    .contenedor-campo input[type="text"].mini,
+    .contenedor-campo input[type="password"].mini,
+    .contenedor-campo input[type="number"].mini,
+    .contenedor-campo input[type="file"].mini,
+    .contenedor-campo select.mini,
+    .contenedor-campo textarea.mini {
+      font-size: 12px;
+      line-height: 21px;
+      height: 30px;
+      padding: 2px 10px; }
+    .contenedor-campo input[type="text"]:last-child,
+    .contenedor-campo input[type="password"]:last-child,
+    .contenedor-campo input[type="number"]:last-child,
+    .contenedor-campo input[type="file"]:last-child,
+    .contenedor-campo select:last-child,
+    .contenedor-campo textarea:last-child {
+      width: 100%;
+      min-width: 100px; }
+    .contenedor-campo input[type="text"]:focus:not([readonly]),
+    .contenedor-campo input[type="password"]:focus:not([readonly]),
+    .contenedor-campo input[type="number"]:focus:not([readonly]),
+    .contenedor-campo input[type="file"]:focus:not([readonly]),
+    .contenedor-campo select:focus:not([readonly]),
+    .contenedor-campo textarea:focus:not([readonly]) {
+      border: 1px solid #2C93E5; }
+    .contenedor-campo input[type="text"][readonly],
+    .contenedor-campo input[type="password"][readonly],
+    .contenedor-campo input[type="number"][readonly],
+    .contenedor-campo input[type="file"][readonly],
+    .contenedor-campo select[readonly],
+    .contenedor-campo textarea[readonly] {
+      color: #F6F8FA; }
+    .contenedor-campo input[type="text"].al-inicio,
+    .contenedor-campo input[type="password"].al-inicio,
+    .contenedor-campo input[type="number"].al-inicio,
+    .contenedor-campo input[type="file"].al-inicio,
+    .contenedor-campo select.al-inicio,
+    .contenedor-campo textarea.al-inicio {
+      text-align: left; }
+    .contenedor-campo input[type="text"].al-centro,
+    .contenedor-campo input[type="password"].al-centro,
+    .contenedor-campo input[type="number"].al-centro,
+    .contenedor-campo input[type="file"].al-centro,
+    .contenedor-campo select.al-centro,
+    .contenedor-campo textarea.al-centro {
+      text-align: center; }
+    .contenedor-campo input[type="text"].al-final,
+    .contenedor-campo input[type="password"].al-final,
+    .contenedor-campo input[type="number"].al-final,
+    .contenedor-campo input[type="file"].al-final,
+    .contenedor-campo select.al-final,
+    .contenedor-campo textarea.al-final {
+      text-align: right; }
+  .contenedor-campo textarea {
+    height: inherit; }
+  .contenedor-campo .boton {
+    flex: 1;
+    border-radius: 0 3px 3px 0; }
+    .contenedor-campo .boton.sin-texto {
+      width: 45px;
+      min-width: 45px;
+      max-width: 45px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center; }
+      .contenedor-campo .boton.sin-texto i {
+        padding: 0; }
+  .contenedor-campo .boton + input[type="text"],
+  .contenedor-campo .boton + input[type="password"],
+  .contenedor-campo .boton + input[type="email"],
+  .contenedor-campo .boton + input[type="file"],
+  .contenedor-campo .boton + input[type="number"] {
+    border-radius: 0 3px 3px 0; }
+  .contenedor-campo input[type="text"] + .boton,
+  .contenedor-campo input[type="password"] + .boton,
+  .contenedor-campo input[type="email"] + .boton,
+  .contenedor-campo input[type="file"] + .boton,
+  .contenedor-campo input[type="number"] + .boton {
+    border-radius: 0 3px 3px 0; }
+  .contenedor-campo input[type="text"]:first-child:not(:last-child),
+  .contenedor-campo input[type="password"]:first-child:not(:last-child),
+  .contenedor-campo input[type="number"]:first-child:not(:last-child),
+  .contenedor-campo input[type="file"]:first-child:not(:last-child) {
+    border-radius: 3px 0 0 3px; }
+  .contenedor-campo input[type="text"]:only-child,
+  .contenedor-campo input[type="password"]:only-child,
+  .contenedor-campo input[type="number"]:only-child,
+  .contenedor-campo input[type="file"]:only-child {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%; }
+  .contenedor-campo .boton:first-of-type {
+    border-radius: 3px 0 0 3px; }
+  .contenedor-campo .boton:first-child {
+    border-radius: 3px 0 0 3px;
+    margin-right: 0; }
+  .contenedor-campo .boton:last-child {
+    border-radius: 0 3px 3px 0;
+    margin-right: 0; }
+  .contenedor-campo.anidado {
+    margin-bottom: 0;
+    z-index: 2; }
+    .contenedor-campo.anidado + .contenedor-campo {
+      padding: 10px;
+      margin-top: -1px;
+      z-index: 1; }
+  .contenedor-campo.error {
+    position: relative; }
+    .contenedor-campo.error input[type="text"],
+    .contenedor-campo.error input[type="password"],
+    .contenedor-campo.error input[type="number"],
+    .contenedor-campo.error input[type="file"],
+    .contenedor-campo.error select,
+    .contenedor-campo.error textarea {
+      border-color: #EA3131; }
+    .contenedor-campo.error:after {
+      content: attr(data-mensaje-error);
+      position: relative;
+      color: #EA3131;
+      font-size: 12px;
+      line-height: 12px;
+      display: block;
+      width: 100%;
+      min-height: 15px;
+      bottom: 0;
+      font-style: italic; }
+    .contenedor-campo.error.invalido:after {
+      content: attr(data-mensaje-invalido); }
+  .contenedor-campo.con-label {
+    flex-wrap: wrap; }
+    .contenedor-campo.con-label label {
+      min-height: 20px;
+      width: 100%;
+      display: block;
+      line-height: 1.3rem;
+      font-size: 1rem;
+      margin: 0; }
+      .contenedor-campo.con-label label i {
+        color: #ADB7BE;
+        margin-right: 5px; }
+
+/* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+/**
+ * This is an example component. Extend inuitcss by building your own components
+ * that make up your UI. Component classes are prefixed with a `c-`.
+ */
+.boton {
+  border-radius: 3px;
+  border: 1px solid #2C93E5;
+  background-color: #2C93E5;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  padding: .25rem 1.2rem;
+  text-decoration: none;
+  height: 40px;
+  display: inherit;
+  align-items: center; }
+  .boton i:first-child {
+    color: #fff;
+    padding: 0px 10px 0 0; }
+  .boton.transparente {
+    background-color: transparent;
+    border-color: transparent; }
+    .boton.transparente:focus {
+      box-shadow: none !important; }
+  .boton.primario:not(.icono) {
+    background-color: #2C93E5;
+    border-color: #2C93E5; }
+    .boton.primario:not(.icono):hover {
+      background-color: #0d416b;
+      border-color: #0d416b; }
+  .boton.secundario:not(.icono) {
+    background-color: #ADB7BE;
+    border-color: #ADB7BE; }
+    .boton.secundario:not(.icono):hover {
+      background-color: #5d6b75;
+      border-color: #5d6b75; }
+  .boton.ok:not(.icono) {
+    background-color: #46C35F;
+    border-color: #46C35F; }
+    .boton.ok:not(.icono):hover {
+      background-color: #1b5527;
+      border-color: #1b5527; }
+  .boton.error:not(.icono) {
+    background-color: #EA3131;
+    border-color: #EA3131; }
+    .boton.error:not(.icono):hover {
+      background-color: #760c0c;
+      border-color: #760c0c; }
+  .boton.alerta:not(.icono) {
+    color: #fff;
+    background-color: #F7C600;
+    border-color: #F7C600; }
+    .boton.alerta:not(.icono):hover {
+      background-color: #5e4b00;
+      border-color: #5e4b00; }
+  .boton.simple {
+    color: #000;
+    background-color: transparent;
+    border-color: transparent;
+    line-height: 22px; }
+    .boton.simple.primario:not(.icono) {
+      background-color: transparent;
+      border-color: #2C93E5;
+      color: #2C93E5; }
+      .boton.simple.primario:not(.icono) i {
+        color: #2C93E5; }
+    .boton.simple.secundario:not(.icono) {
+      background-color: transparent;
+      border-color: #ADB7BE;
+      color: #ADB7BE; }
+      .boton.simple.secundario:not(.icono) i {
+        color: #ADB7BE; }
+    .boton.simple.ok:not(.icono) {
+      background-color: transparent;
+      border-color: #46C35F;
+      color: #46C35F; }
+      .boton.simple.ok:not(.icono) i {
+        color: #46C35F; }
+    .boton.simple.error:not(.icono) {
+      background-color: transparent;
+      border-color: #EA3131;
+      color: #EA3131; }
+      .boton.simple.error:not(.icono) i {
+        color: #EA3131; }
+    .boton.simple.alerta:not(.icono) {
+      color: #000;
+      background-color: transparent;
+      border-color: #F7C600;
+      color: #F7C600; }
+      .boton.simple.alerta:not(.icono) i {
+        color: #ADB7BE; }
+    .boton.simple.hover-primario:hover {
+      background-color: #2C93E5;
+      border-color: #2C93E5;
+      color: #fff; }
+      .boton.simple.hover-primario:hover i {
+        color: #fff; }
+    .boton.simple.hover-secundario:hover {
+      background-color: #ADB7BE;
+      border-color: #ADB7BE;
+      color: #fff; }
+      .boton.simple.hover-secundario:hover i {
+        color: #fff; }
+    .boton.simple.hover-alerta:hover {
+      background-color: #F7C600;
+      border-color: #F7C600;
+      color: #fff; }
+      .boton.simple.hover-alerta:hover i {
+        color: #fff; }
+    .boton.simple.hover-error:hover {
+      background-color: #EA3131;
+      border-color: #EA3131;
+      color: #fff; }
+      .boton.simple.hover-error:hover i {
+        color: #fff; }
+  .boton.disabled, .boton:disabled {
+    background-color: #dbe4ea !important;
+    border-color: #dbe4ea !important;
+    color: #6c7a86;
+    cursor: not-allowed;
+    opacity: .65; }
+  .boton.link {
+    background: transparent;
+    background-color: transparent;
+    border-color: transparent;
+    color: #000; }
+    .boton.link i {
+      color: #1B8A97; }
+    .boton.link:hover {
+      color: #1B8A97; }
+  .boton.grande {
+    padding: .75rem 1.5rem;
+    font-size: 1.25rem; }
+  .boton.mini {
+    padding: .25rem .5rem;
+    font-size: 12px;
+    font-weight: 400;
+    height: 30px; }
+  .boton.icono {
+    background-color: transparent;
+    border-color: transparent;
+    line-height: 24px;
+    height: auto; }
+    .boton.icono i {
+      padding: 0; }
+    .boton.icono.primario i {
+      color: #2C93E5; }
+    .boton.icono.primario:hover, .boton.icono.primario.con-borde {
+      border-color: #2C93E5; }
+    .boton.icono.secundario i {
+      color: #ADB7BE; }
+    .boton.icono.secundario:hover, .boton.icono.secundario.con-borde {
+      border-color: #ADB7BE; }
+    .boton.icono.ok i {
+      color: #46C35F; }
+    .boton.icono.ok:hover, .boton.icono.ok.con-borde {
+      border-color: #46C35F; }
+    .boton.icono.alerta i {
+      color: #F7C600; }
+    .boton.icono.alerta:hover, .boton.icono.alerta.con-borde {
+      border-color: #F7C600; }
+    .boton.icono.error i {
+      color: #EA3131; }
+    .boton.icono.error:hover, .boton.icono.error.con-borde {
+      border-color: #EA3131; }
+  .boton.selector {
+    position: relative; }
+  .boton.opcion {
+    border-radius: 0;
+    display: flex;
+    background-color: transparent;
+    border: transparent;
+    font-size: 14px;
+    padding: 6px 8px;
+    color: #000;
+    text-align: left; }
+    .boton.opcion:hover {
+      border-radius: 0;
+      background-color: #ADB7BE;
+      border-color: #ADB7BE;
+      color: #fff; }
+    .boton.opcion.activo {
+      border-radius: 0;
+      background-color: #2C93E5;
+      border-color: #2C93E5;
+      color: #fff; }
+
+.click {
+  cursor: pointer; }
+
+.opciones .boton,
+.opciones li,
+.opciones > div,
+.opcion .boton,
+.opcion li,
+.opcion > div {
+  margin-right: 7px;
+  position: relative; }
+  .opciones .boton:last-child,
+  .opciones li:last-child,
+  .opciones > div:last-child,
+  .opcion .boton:last-child,
+  .opcion li:last-child,
+  .opcion > div:last-child {
+    margin-right: 0; }
+
+button.transparente {
+  width: 100%;
+  display: flex; }
+
+/* ==========================================================================
+   #CLEARFIX
+   ========================================================================== */
+/**
+ * Attach our clearfix mixin to a utility class.
+ */
+.u-clearfix:after {
+  content: "" !important;
+  display: block !important;
+  clear: both !important; }
+
+/* ==========================================================================
+   #HEADINGS
+   ========================================================================== */
+/**
+ * Redefine all of our basic heading styles against utility classes so as to
+ * allow for double stranded heading hierarchy, e.g. we semantically need an H2,
+ * but we want it to be sized like an H1:
+ *
+ *   <h2 class="u-h1"></h2>
+ *
+ */
+.u-h1 {
+  font-size: 36px !important;
+  font-size: 2.25rem !important;
+  line-height: 1.33333 !important; }
+
+.u-h2 {
+  font-size: 28px !important;
+  font-size: 1.75rem !important;
+  line-height: 1.71429 !important; }
+
+.u-h3 {
+  font-size: 24px !important;
+  font-size: 1.5rem !important;
+  line-height: 1 !important; }
+
+.u-h4 {
+  font-size: 20px !important;
+  font-size: 1.25rem !important;
+  line-height: 1.2 !important; }
+
+.u-h5 {
+  font-size: 18px !important;
+  font-size: 1.125rem !important;
+  line-height: 1.33333 !important; }
+
+.u-h6 {
+  font-size: 16px !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important; }
+
+/* ==========================================================================
+   #SPACINGS
+   ========================================================================== */
+/**
+ * Utility classes to put specific spacing values onto elements. The below loop
+ * will generate us a suite of classes like:
+ *
+ *   .u-margin-top {}
+ *   .u-padding-left-large {}
+ *   .u-margin-right-small {}
+ *   .u-padding {}
+ *   .u-padding-right-none {}
+ *   .u-padding-horizontal {}
+ *   .u-padding-vertical-small {}
+ */
+/* stylelint-enable string-quotes */
+.u-half-padding-right {
+  padding-right: 0.46875rem !important; }
+
+.u-half-padding-left {
+  padding-left: 0.46875rem !important; }
+
+.u-no-padding-right {
+  padding-right: 0 !important; }
+
+.u-no-padding-left {
+  padding-left: 0 !important; }
+
+.u-push-top {
+  margin-top: 1rem !important; }
+  .u-push-top_x2 {
+    margin-top: 2rem !important; }
+  .u-push-top_x3 {
+    margin-top: 3rem !important; }
+  .u-push-top_x4 {
+    margin-top: 4rem !important; }
+  .u-push-top_x5 {
+    margin-top: 5rem !important; }
+  .u-push-top_half {
+    margin-top: 0.5rem !important; }
+
+.u-push-top-inside {
+  padding-top: 1rem !important; }
+  .u-push-top-inside_x2 {
+    padding-top: 2rem !important; }
+  .u-push-top-inside_x3 {
+    padding-top: 3rem !important; }
+  .u-push-top-inside_x4 {
+    padding-top: 4rem !important; }
+  .u-push-top-inside_x5 {
+    padding-top: 5rem !important; }
+  .u-push-top-inside_half {
+    padding-top: 0.5rem !important; }
+
+.u-push-bottom {
+  margin-bottom: 1rem !important; }
+  .u-push-bottom_x2 {
+    margin-bottom: 2rem !important; }
+  .u-push-bottom_x3 {
+    margin-bottom: 3rem !important; }
+  .u-push-bottom_x4 {
+    margin-bottom: 4rem !important; }
+  .u-push-bottom_x5 {
+    margin-bottom: 5rem !important; }
+  .u-push-bottom_half {
+    margin-bottom: 0.5rem !important; }
+
+.u-push-bottom-inside {
+  padding-bottom: 1rem !important; }
+  .u-push-bottom-inside_x2 {
+    padding-bottom: 2rem !important; }
+  .u-push-bottom-inside_x3 {
+    padding-bottom: 3rem !important; }
+  .u-push-bottom-inside_x4 {
+    padding-bottom: 4rem !important; }
+  .u-push-bottom-inside_x5 {
+    padding-bottom: 5rem !important; }
+  .u-push-bottom-inside_half {
+    padding-bottom: 0.5rem !important; }
+
+/* ==========================================================================
+   #RESPONSIVE-SPACINGS
+   ========================================================================== */
+/**
+ * Utility classes enhancing the normal spacing classes by adding responsiveness
+ * to them. By default this brings us the following classes:
+ *
+ *   .u-margin-bottom-none@mobile {}
+ *   .u-margin-bottom-none@tablet {}
+ *   .u-margin-bottom-none@desktop {}
+ *   .u-margin-bottom-none@wide {}
+ *
+ * But we can affect the classes that get generated by altering the appropriate
+ * Sass maps below.
+ */
+/* stylelint-enable max-nesting-depth */
+/* ==========================================================================
+   #PRINT
+   ========================================================================== */
+/**
+ * Very crude, reset-like styles taken from the HTML5 Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#print-styles
+ * https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css#L205-L282
+ */
+@media print {
+  /**
+   * 1. Black prints faster: http://www.sanbeiji.com/archives/953
+   */
+  *,
+  *:before,
+  *:after,
+  *:first-letter,
+  *:first-line {
+    background: transparent !important;
+    color: #000 !important;
+    /* [1] */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  a,
+  a:visited {
+    text-decoration: underline; }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  /**
+   * Don't show links that are fragment identifiers, or use the `javascript:`
+   * pseudo protocol.
+   */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ""; }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  /**
+   * Printing Tables: http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group; }
+  tr,
+  img {
+    page-break-inside: avoid; }
+  img {
+    max-width: 100% !important; }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+
+.u-texto-primario {
+  color: #2C93E5 !important; }
+
+.u-texto-alerta {
+  color: #F7C600 !important; }
+
+.u-texto-error {
+  color: #EA3131 !important; }
+
+.u-texto-ok {
+  color: #46C35F !important; }
+
+.u-texto-info, .u-texto-informacion {
+  color: #1CB7AF !important; }
+
+.u-texto-secundario {
+  color: #ADB7BE !important; }
+
+/* ==========================================================================
+   #HIDE
+   ========================================================================== */
+/**
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.u-hidden-visually {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important; }
+
+/**
+ * Hide visually and from screen readers.
+ */
+.u-hidden {
+  display: none !important; }

@@ -1,0 +1,38 @@
+{
+  "name": "starter-styleguide",
+  "version": "1.0.0",
+  "description": "Starter de Style guide basado en ITCSS y generado con KSS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parallelshell 'npm run serve' 'npm run watch:css' 'npm run watch:js'",
+    "build": "npm run css && npm run autoprefixer",
+    "css": "node-sass -x --output-style compressed -o dist/css src/scss/main.scss --source-map dist/css",
+    "autoprefixer": "postcss -u --no-map autoprefixer -r dist/css/main.css -o dist/css/main.min.css",
+    "serve": "browser-sync start --server --directory --files 'dist/css/*.css, dist/js/*.js, *.html'",
+    "watch:css": "onchange 'src/scss/**/*.scss' -- npm run css",
+    "build:js": "browserify src/js/main.js -o dist/js/main.min.js",
+    "watch:js": "onchange 'src/js/**/*.js' -- npm run build:js",
+    "styleguide": "./node_modules/.bin/kss --source src/scss --destination styleguide -b node_modules/michelangelo/kss_styleguide/custom-template/ --css ../dist/css/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org:systemico/style-guide.git"
+  },
+  "author": "Jairo Ivan Rondon Mejia",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "browser-sync": "^2.18.12",
+    "michelangelo": "^0.6.1",
+    "node-sass": "^4.5.3",
+    "onchange": "^3.2.1",
+    "parallelshell": "^3.0.1",
+    "postcss-cli": "^4.1.0",
+    "sass-lint": "^1.10.2",
+    "node-sass-import": "^1.1.1",
+    "foundation-sites": "^6.4.4-rc1",
+    "kss": "^3.0.0-beta.18",
+    "browserify": "latest"
+  }
+}

@@ -1,0 +1,28 @@
+
+// COLORES DE TEXTOS Y FONDOS
+.u-fuente-alt{
+  font-family: $fuente-alt !important;
+}
+.u-slim-text{
+  font-weight: 400 !important;
+}
+.u-micro-text{
+  font-size: rem-calc(9px);
+  line-height: rem-calc(14);
+}
+.u-tiny-text{
+  font-size: rem-calc(12px);
+  line-height: rem-calc(17);
+}
+.u-normal-text{
+  font-size: rem-calc(14px);
+  line-height: rem-calc(19);
+}
+.u-medium-text{
+  font-size: rem-calc(19px);
+  line-height: rem-calc(26);
+}
+.u-large-text{
+  font-size: rem-calc(20px);
+  line-height: rem-calc(32);
+}
